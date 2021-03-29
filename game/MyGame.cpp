@@ -54,12 +54,12 @@ void CMyGame::OnUpdate()
 					player.SetXVelocity(0);
 					if (IsKeyDown(SDLK_a))
 					{
-						if(slideStatus != SLIDE_INACTIVE) slideStatus = LEFT_SLIDE;
-						if (dashStatus != DASH_INACTIVE)
+						if (slideStatus != SLIDE_INACTIVE)
 						{
-							dashStatus = DASH_READY;
 							jumpN = 2;
+							slideStatus = LEFT_SLIDE;
 						}
+						if (dashStatus != DASH_INACTIVE) dashStatus = DASH_READY;
 						slideBool = true;
 					}
 				}
@@ -71,12 +71,12 @@ void CMyGame::OnUpdate()
 					player.SetXVelocity(0);
 					if (IsKeyDown(SDLK_d))
 					{
-						if (slideStatus != SLIDE_INACTIVE) slideStatus = RIGHT_SLIDE;
-						if (dashStatus != DASH_INACTIVE)
+						if (slideStatus != SLIDE_INACTIVE)
 						{
-							dashStatus = DASH_READY;
 							jumpN = 2;
+							slideStatus = RIGHT_SLIDE;
 						}
+						if (dashStatus != DASH_INACTIVE) dashStatus = DASH_READY;
 						slideBool = true;
 					}
 				}
